@@ -4,14 +4,15 @@
  * User: Hatim Jacquir <jacquirhatim@gmail.com>
  */
 
-namespace Hj;
+namespace Hj\Tests\Unit;
 
+use \Hj\Anagram;
 use \PHPUnit_Framework_TestCase;
 
 require '../../vendor/autoload.php';
 
 /**
- * @covers Anagram
+ * @covers \Hj\Anagram
  */
 class AnagramTest extends PHPUnit_Framework_TestCase
 {
