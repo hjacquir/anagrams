@@ -6,33 +6,40 @@
 
 namespace Hj;
 
+use \Exception;
+
 /**
- * Anagram
+ * Class which return all valid anagram for a given word
+ * A anagram is valid when the word exist on the dictionary
  */
 class Anagram
 {
     /**
-     * Return all permutations for given word
-     * 
-     * @param string $string The given word or string
-     * 
-     * @return array $permutations An array of all permutation possible 
+     * @var array $anagrams An array which contain all valid anagram
      */
-    public function permute($string)
+    private $anagrams;
+    
+    /**
+     * @param string $word
+     */
+    public function addValidAnagram($word)
     {
-        if (strlen($string) < 2) {
-            return array($string);
+        if (null === $word) {
+            throw new Exception('The word can not be null');
         }
         
-        $permutations                = array();
-        $stringWithoutFirstCharacter = substr($string, 1);
-        foreach ($this->permute($stringWithoutFirstCharacter) as $permutation) {
-            $length = strlen($permutation);
-            for ($i =0; $i <= $length; $i++) {
-                $permutations[] = substr($permutation, 0, $i) . $string[0] . substr($permutation, $i);
-            }
+        $this->anagrams[] = $word;
+    }
+    
+    /**
+     * @return array 
+     */
+    public function getAllValidAnagrams()
+    {
+        if (empty($this->anagrams)) {
+            throw new Exception('No valid anagram exist for this word');
         }
         
-        return $permutations;
+        return $this->anagrams;
     }
 }
