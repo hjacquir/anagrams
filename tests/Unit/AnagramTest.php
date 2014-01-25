@@ -37,7 +37,7 @@ class AnagramTest extends PHPUnit_Framework_TestCase
     
     /**
      * @expectedException        Exception
-     * @expectedExceptionMessage The word can not be null
+     * @expectedExceptionMessage The word can not be empty
      */
     public function testShouldThrowAnExceptionWhenTheWordIsNull()
     {
@@ -46,7 +46,7 @@ class AnagramTest extends PHPUnit_Framework_TestCase
     
     /**
      * @expectedException        Exception
-     * @expectedExceptionMessage No valid anagram exist for this word
+     * @expectedExceptionMessage No anagram were found for that word
      */
     public function testShouldThrowAnExceptionWhenNoValidAnagramsAreAdded()
     {

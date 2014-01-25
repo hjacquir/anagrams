@@ -24,8 +24,8 @@ class Anagram
      */
     public function addValidAnagram($word)
     {
-        if (null === $word) {
-            throw new Exception('The word can not be null');
+        if (empty($word)) {
+            throw new Exception('The word can not be empty');
         }
         
         $this->anagrams[] = $word;
@@ -37,7 +37,7 @@ class Anagram
     public function getAllValidAnagrams()
     {
         if (empty($this->anagrams)) {
-            throw new Exception('No valid anagram exist for this word');
+            throw new Exception('No anagram were found for that word');
         }
         
         return $this->anagrams;
