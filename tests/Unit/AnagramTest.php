@@ -34,22 +34,4 @@ class AnagramTest extends PHPUnit_Framework_TestCase
         
         $this->assertSame(array('chien', 'niche'), $this->anagram->getAllValidAnagrams());
     }
-    
-    /**
-     * @expectedException        Exception
-     * @expectedExceptionMessage The word can not be empty
-     */
-    public function testShouldThrowAnExceptionWhenTheWordIsNull()
-    {
-        $this->anagram->addValidAnagram(null);
-    }
-    
-    /**
-     * @expectedException        Exception
-     * @expectedExceptionMessage No anagram were found for that word
-     */
-    public function testShouldThrowAnExceptionWhenNoValidAnagramsAreAdded()
-    {
-        $this->anagram->getAllValidAnagrams();
-    }
 }

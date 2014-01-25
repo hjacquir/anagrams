@@ -6,8 +6,6 @@
 
 namespace Hj;
 
-use \Exception;
-
 /**
  * Class which return all valid anagram for a given word
  * A anagram is valid when the word exist on the dictionary
@@ -24,10 +22,6 @@ class Anagram
      */
     public function addValidAnagram($word)
     {
-        if (empty($word)) {
-            throw new Exception('The word can not be empty');
-        }
-        
         $this->anagrams[] = $word;
     }
     
@@ -36,10 +30,6 @@ class Anagram
      */
     public function getAllValidAnagrams()
     {
-        if (empty($this->anagrams)) {
-            throw new Exception('No anagram were found for that word');
-        }
-        
         return $this->anagrams;
     }
 }
