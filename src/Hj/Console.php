@@ -39,8 +39,14 @@ class Console extends Command
             }
         }
         
-        $anagrams = implode(' , ', $anagram->getAllValidAnagrams());
+        $arrayOfAnagram = $anagram->getAllValidAnagrams();
         
-        $output->writeln('<info>All anagrams are : ' . $anagrams . '</info>');
+        $message = '<error>No anagram were found for that word.</error>';
+        if (false === empty($arrayOfAnagram)) {
+            $stringOfAnagram = implode(' , ', $arrayOfAnagram);
+            $message = '<info>Anagrams are : ' . $stringOfAnagram . '</info>';
+        }
+        
+        $output->writeln($message);
     }
 }
