@@ -13,6 +13,7 @@ use \Httpful\Request;
  */
 class Api
 {
+    const PRINCIPAL_TRANSLATIONS = 'PrincipalTranslations';
     /**
      * @var string $uri The called uri without the parameter
      */
@@ -51,7 +52,7 @@ class Api
         $apiResponse          = Request::get($baseUriWithParameter)->send();
         $encodedJson          = json_encode($apiResponse->body);
         
-        if (strpos($encodedJson, 'PrincipalTranslations') > 0) {
+        if (strpos($encodedJson, self::PRINCIPAL_TRANSLATIONS) > 0) {
             $exist = true;
         }
         
