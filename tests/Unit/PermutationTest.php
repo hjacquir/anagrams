@@ -9,8 +9,6 @@ namespace Hj\Tests\Unit;
 use \Hj\Permutation;
 use \PHPUnit_Framework_TestCase;
 
-require '../../vendor/autoload.php';
-
 /**
  * @covers \Hj\Permutation
  */

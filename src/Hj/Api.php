@@ -6,8 +6,6 @@
 
 namespace Hj;
 
-use \Httpful\Request;
-
 /**
  * Class which call an specific uri of the API and return the response
  */
@@ -49,10 +47,10 @@ class Api
         $exist = false;
         
         $baseUriWithParameter = $this->baseUriWithoutParameter . $word;
-        $apiResponse          = Request::get($baseUriWithParameter)->send();
-        $encodedJson          = json_encode($apiResponse->body);
         
-        if (strpos($encodedJson, self::PRINCIPAL_TRANSLATIONS) > 0) {
+        $apiResponse = file_get_contents($baseUriWithParameter);
+        
+        if (strpos($apiResponse, self::PRINCIPAL_TRANSLATIONS) > 0) {
             $exist = true;
         }
         

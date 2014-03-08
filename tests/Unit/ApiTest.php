@@ -9,8 +9,6 @@ namespace Hj\Tests\Unit;
 use \PHPUnit_Framework_TestCase;
 use \Hj\Api;
 
-require '../../vendor/autoload.php';
-
 /**
  * @covers Api
  */

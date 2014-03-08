@@ -6,11 +6,8 @@
 
 namespace Hj\Tests\Unit;
 
-use \Exception;
 use \Hj\Anagram;
 use \PHPUnit_Framework_TestCase;
-
-require '../../vendor/autoload.php';
 
 /**
  * @covers \Hj\Anagram
